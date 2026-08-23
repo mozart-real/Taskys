@@ -24,32 +24,8 @@ curl -sSL https://taskys.squareweb.app/install.sh | bash
 
 Ou baixe o AppImage direto em https://taskys.squareweb.app/download/appimage
 
-## Servidor de download (site)
 
-A pasta `site/` é servida por `server.py` (Python puro, sem dependências):
 
-```bash
-python3 server.py          # http://0.0.0.0:80
-PORT=8000 python3 server.py
-```
-
-Rotas:
-
-- `/` — site
-- `/install.sh` — script de instalação
-- `/download/appimage` — faz stream do AppImage local (`app/dist/`) ou redireciona para a release no GitHub
-- `/api/downloads` — contador de downloads
-
-## Estrutura
-
-```
-taskys/
-├── app/          # Electron + React (código-fonte do app desktop)
-├── site/         # Site estático de download
-├── server.py     # Servidor do site (stdio http, sem deps)
-├── install.sh    # Instalador one-liner
-└── requirements.txt
-```
 
 ## Licença
 
