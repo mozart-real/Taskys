@@ -1,3 +1,0 @@
-# Taskys download server — no third-party dependencies.
-# server.py uses only the Python standard library (http.server, json, os, re).
-# Just run:  python3 server.py
