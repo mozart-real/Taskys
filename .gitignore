@@ -1,0 +1,7 @@
+node_modules/
+app/dist/
+downloads.count
+*.AppImage
+__pycache__/
+*.pyc
+.DS_Store

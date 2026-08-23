@@ -1,0 +1,43 @@
+{
+  "name": "taskys",
+  "version": "1.0.0",
+  "description": "Free and open-source task organizer with smart reminders",
+  "main": "electron/main.js",
+  "author": "Taskys Team",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "electron .",
+    "dev:app": "concurrently \"vite\" \"wait-on tcp:5173 && cross-env VITE_DEV=1 electron .\"",
+    "dist": "npm run build && electron-builder --linux AppImage deb rpm"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.6",
+    "node-notifier": "^10.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.3",
+    "concurrently": "^9.0.1",
+    "cross-env": "^7.0.3",
+    "electron": "^43.4.1",
+    "electron-builder": "^25.1.8",
+    "vite": "^5.4.10",
+    "wait-on": "^8.0.1"
+  },
+  "build": {
+    "appId": "dev.taskys.app",
+    "productName": "Taskys",
+    "linux": {
+      "category": "Utility",
+      "icon": "src/assets/icon.png",
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm"
+      ]
+    }
+  }
+}
